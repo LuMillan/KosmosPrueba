@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19/03/2020, 12:45:38 PM
+    Author     : luismillan
+*/
+*{
+    padding:0px;
+    margin: 0px;  
+}
+#millanLogo {
+	background-color: #000000;
+        text-align: center;
+        height: 80px;
+        }
+
+body{
+    background-color: #ffffff;
+}
+#bar{
+    background-color:#7b241c;
+    position: fixed;
+    width: 150px;
+    height: 100%;
+}
+#bar ul li{
+    color:#d5d8dc;
+    font-size: 20px;
+    text-align: center;
+    padding: 45px 40px;
+    list-style: none;
+    border-bottom: 2px solid rgba(100, 100, 100, .3);
+    
+}
+#content{
+    margin: auto;
+    margin-top: 30px;
+    margin-left: 200px;
+    width: auto;
+    height: auto;
+}
