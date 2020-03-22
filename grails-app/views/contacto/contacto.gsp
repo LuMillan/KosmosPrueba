@@ -13,7 +13,7 @@
         <title></title>
     </head>
     <body>
-        <form action="contacto/save">
+        <form action="save">
             <p>
             <h1>Ingresa tus datos de contacto:</h1>
             <br>Nombre: <input type="text" name="nombre">
@@ -22,11 +22,11 @@
             <!--<br>Empresa:<input type="text" name="empresa">-->
             <br><select name="empresa">
                
-                <option value="1">polos</option>
+                <option value="1">Kosmos</option>
 
-                <option value="2">Kosmos</option>
+                <option value="2">Telmex</option>
 
-                <option value="3">Google México</option>
+                <option value="3">polos</option>
 
             </select>
             <br><input type="submit" value="enviar">

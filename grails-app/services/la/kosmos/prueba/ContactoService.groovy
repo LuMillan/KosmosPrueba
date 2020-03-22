@@ -65,7 +65,7 @@ class ContactoService {
         def respuesta=""
         
         if(!nombre.isNumber()){
-            Contacto contacto=Contacto.findAllByNombre(nombre)
+            Contacto contacto=Contacto.findByNombre(nombre)
             
             if(contacto){
                 contacto.delete()
@@ -74,7 +74,7 @@ class ContactoService {
                 respuesta="No existe un contacto con ese nombre"
             }
         }else{
-            def contacto=Contacto.findAllById(nombre)
+            def contacto=Contacto.findByNombre(nombre)
             if(contacto){
                 contacto.delete()
                 respuesta="Contacto borrado"
