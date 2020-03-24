@@ -17,7 +17,7 @@
     <!--action="updateContacto"-->
     <form id="update" action="geetContacto">
         <div id="buscar" ><h1>Ingresa el nombre o id del contacto a editar</h1>
-            <br>Nombre :<br> <input type="text" name="nombre">
+            <br>Nombre sakjdguikdv:<br> <input type="text" name="nombre">
         </div>
         <br><input type="submit" name="buscar" value="buscar"/><!--<input type="button" value="Buscar" onclick="Ocultar()">-->
     </form>
