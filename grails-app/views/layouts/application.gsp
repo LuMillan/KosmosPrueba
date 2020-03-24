@@ -42,7 +42,7 @@
                 </li>    
             </a>
 
-            <a href="${createLink(controller:'contacto',action:'index')}">
+            <a href="${createLink(controller:'contacto',action:'editarContacto')}">
                 <li> 
                     <g:img dir="images" file="settings.png" width="50" height="50"/>
                 </li>    

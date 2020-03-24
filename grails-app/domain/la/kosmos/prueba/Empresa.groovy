@@ -8,4 +8,7 @@ class Empresa {
     static constraints = {
         
     }
+   /*     String toString(){
+            return "${nombre}"
+        }*/
 }

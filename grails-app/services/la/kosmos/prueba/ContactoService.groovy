@@ -21,45 +21,59 @@ class ContactoService {
     }
     
     def getContacto(def nombre){
-        def respuesta=""
+              def respuesta=""
         
-        if(!nombre.isNumber()){
-            def contacto=Contacto.findAllByNombre(nombre)
+            if(!nombre.isNumber()){
+                def contacto=Contacto.findAllByNombre(nombre)
             
-            if(contacto){
-                respuesta="<br>Nombre "+contacto.nombre+"<br> Correo "+contacto.correo+"<br> Telefono "+contacto.numTelefonico+"<br> Empresa "+contacto.empresa
+                if(contacto){
+                    respuesta="<br>Nombre "+contacto.nombre+"<br> Correo "+contacto.correo+"<br> Telefono "+contacto.numTelefonico+"<br> Empresa "+contacto.empresa
+                }else{
+                    respuesta="No existe un contacto con ese nombre"
+                }
             }else{
-                respuesta="No existe un contacto con ese nombre"
+                def contacto=Contacto.findAllById(nombre)
+                if(contacto){
+                    respuesta="<br>Nombre "+contacto.nombre+"<br> Correo "+contacto.correo+"<br> Telefono "+contacto.numTelefonico+"<br> Empresa "+contacto.empresa
+                }else{
+                    respuesta="No existe un contacto con ese Id"
+                }
             }
-        }else{
-            def contacto=Contacto.findAllById(nombre)
-            if(contacto){
-                respuesta="<br>Nombre "+contacto.nombre+"<br> Correo "+contacto.correo+"<br> Telefono "+contacto.numTelefonico+"<br> Empresa "+contacto.empresa
-            }else{
-                respuesta="No existe un contacto con ese Id"
-            }
-        }
+        
 
         return respuesta
         
     }
     
-    def geetContacto(def p){
+    def geetContacto(def nombre){
+        def contacto=""
         
         if(!nombre.isNumber()){
-            def contacto=Contacto.findAllByNombre(p)
+             contacto=Contacto.findByNombre(nombre)
         }else{
-            def contacto=Contacto.findAllById(p)
+             contacto=Contacto.get(nombre)
         }
+        println(contacto.empresa)
+       /*def empresa=Empresa.get(contacto.empresa)
+        contacto.empresa=empresa.nombre*/
         return contacto
     }
+    def getList(){
+        
+        return Contacto.list()
+        
+    }
     
-    def updateContacto(Contacto datosOriginales, Contacto datosNuevos){
-        Contacto original=geetContacto(param)
-        Contacto nuevo=Contacto.get(original.id)
-        nuevo=datosNuevos
-        nuevo.save       
-    }  
+    def updateContacto(params){
+        Contacto contacto=Contacto.get(params.id)
+        println(params.nombre)
+        contacto.nombre=params.nombre
+        contacto.correo=params.correo
+        def empresa_obj=Empresa.findByNombreEmpresa(params.empresa)
+        contacto.empresa=empresa_obj
+        contacto.numTelefonico=params.telefono
+        contacto.save()
+    }
     
     def deleteContacto(def nombre){
         def respuesta=""
@@ -74,7 +88,7 @@ class ContactoService {
                 respuesta="No existe un contacto con ese nombre"
             }
         }else{
-            def contacto=Contacto.findByNombre(nombre)
+            def contacto=Contacto.get(nombre)
             if(contacto){
                 contacto.delete()
                 respuesta="Contacto borrado"

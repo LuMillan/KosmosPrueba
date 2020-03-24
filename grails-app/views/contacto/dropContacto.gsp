@@ -12,8 +12,8 @@
     <form action="deleteContacto">
   <p>
     <h1>Ingresa el nombre o id del contacto a eliminar</h1>
-    <br>Nombre o id: <input type="text" name="nombre">
-    <br><input type="submit" value="enviar">
+    <br>Nombre o id:<br> <input type="text" name="nombre">
+    <br><br><input type="submit" value="enviar">
   </p>
 </form>
     </body>

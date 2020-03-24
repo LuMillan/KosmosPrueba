@@ -16,11 +16,11 @@
         <form action="save">
             <p>
             <h1>Ingresa tus datos de contacto:</h1>
-            <br>Nombre: <input type="text" name="nombre">
-            <br>Número telefonico:<input type="text" name="numTelefonico">
-            <br>Correo electronico:<input type="text" name="correo">
+            <br><br>Nombre: <br><input type="text" name="nombre">
+            <br><br><br>Número telefonico:<br><input type="text" name="numTelefonico">
+            <br><br><br>Correo electronico:<br><input type="text" name="correo">
             <!--<br>Empresa:<input type="text" name="empresa">-->
-            <br><select name="empresa">
+            <br><br><br><select name="empresa">
                
                 <option value="1">Kosmos</option>
 
@@ -29,7 +29,7 @@
                 <option value="3">polos</option>
 
             </select>
-            <br><input type="submit" value="enviar">
+            <br><br><br><input type="submit" value="enviar">
             </p>
         </form>
     </body>
